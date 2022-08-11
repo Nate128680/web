@@ -1,0 +1,859 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MassGram</title>
+
+    <meta charset="utf-8" />
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+
+    <!-- Css -->
+    <link rel="stylesheet" href="/static/css/style.css" />
+
+    <!-- Dark Mode JS -->
+    <script src="/static/js/darkMode.bundle.js"></script>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="/static/img/favicon.png" />
+    <link rel="apple-touch-icon" href="/static/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/img/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/img/apple-touch-icon-114x114.png" />
+</head>
+
+<body class="dark:bg-jacarta-900 font-body text-jacarta-500 overflow-x-hidden" itemscope itemtype="http://schema.org/WebPage">
+    <!-- Header -->
+    <header class="js-page-header fixed top-0 z-20 w-full backdrop-blur transition-colors">
+        <div class="flex items-center px-6 py-6 xl:px-24">
+            <!-- Logo -->
+            <a href="/" class="shrink-0">
+                <img src="/static/img/logo.png" class="max-h-7 dark:hidden" alt="MassGram" />
+                <img src="/static/img/logo_white.png" class="hidden max-h-7 dark:block" alt="MassGram" />
+            </a>
+
+            <!-- Menu / Actions -->
+            <div class="js-mobile-menu dark:bg-jacarta-800 invisible fixed inset-0 z-10 ml-auto items-center bg-white opacity-0 lg:visible lg:relative lg:inset-auto lg:flex lg:bg-transparent lg:opacity-100 dark:lg:bg-transparent">
+                <!-- Mobile Logo / Menu Close -->
+                <div class="t-0 dark:bg-jacarta-800 fixed left-0 z-10 flex w-full items-center justify-between bg-white p-6 lg:hidden">
+                    <!-- Mobile Logo -->
+                    <a href="/" class="shrink-0">
+                        <img src="/static/img/logo.png" class="max-h-7 dark:hidden" alt="MassGram" />
+                        <img src="/static/img/logo_white.png" class="hidden max-h-7 dark:block" alt="MassGram" />
+                    </a>
+
+                    <!-- Mobile Menu Close -->
+                    <button class="js-mobile-close border-jacarta-100 hover:bg-accent focus:bg-accent group dark:hover:bg-accent ml-2 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
+                        aria-label="close mobile menu">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                class="fill-jacarta-700 h-4 w-4 transition-colors group-hover:fill-white group-focus:fill-white dark:fill-white"
+              >
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path
+                  d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"
+                />
+              </svg>
+            </button>
+                </div>
+
+                <!-- Mobile Search -->
+                <form class="relative mt-24 mb-8 w-full lg:hidden">
+                </form>
+
+                <!-- Primary Nav -->
+                <nav class="navbar w-full">
+                    <ul class="flex flex-col lg:flex-row">
+                        <li class="group">
+                            <a href="/#products" class="text-jacarta-700 font-display hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-white lg:px-5">Products</a
+                >
+              </li>
+              
+              <li class="group">
+                <a
+                  href="/#hww"
+                  class="text-jacarta-700 font-display hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-white lg:px-5"
+                  >How we work</a
+                >
+              </li>
+                        <li class="group">
+                            <a href="/#reviews" class="text-jacarta-700 font-display hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-white lg:px-5">Reviews</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Actions -->
+          <div class="ml-8 hidden lg:flex xl:ml-12">
+            <!-- Dark Mode -->
+            <a
+              href="#"
+              class="border-jacarta-100 hover:bg-accent focus:bg-accent group dark:hover:bg-accent js-dark-mode-trigger ml-2 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                class="fill-jacarta-700 dark-mode-light h-4 w-4 transition-colors group-hover:fill-white group-focus:fill-white dark:hidden"
+              >
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path
+                  d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C21.662 17.854 17.316 22 12.001 22 6.477 22 2 17.523 2 12c0-5.315 4.146-9.661 9.38-9.981z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                class="fill-jacarta-700 dark-mode-dark hidden h-4 w-4 transition-colors group-hover:fill-white group-focus:fill-white dark:block dark:fill-white"
+              >
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path
+                  d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"
+                />
+              </svg>
+            </a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Actions -->
+        <div class="ml-auto flex lg:hidden">
+
+            <!-- Dark Mode -->
+            <a href="#" class="js-dark-mode-trigger border-jacarta-100 hover:bg-accent dark:hover:bg-accent focus:bg-accent group ml-2 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="fill-jacarta-700 dark-mode-light h-4 w-4 transition-colors group-hover:fill-white group-focus:fill-white dark:hidden">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path
+                  d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C21.662 17.854 17.316 22 12.001 22 6.477 22 2 17.523 2 12c0-5.315 4.146-9.661 9.38-9.981z"
+                />
+              </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="fill-jacarta-700 dark-mode-dark hidden h-4 w-4 transition-colors group-hover:fill-white group-focus:fill-white dark:block dark:fill-white">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path
+                  d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"
+                />
+              </svg>
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button
+            class="js-mobile-toggle border-jacarta-100 hover:bg-accent dark:hover:bg-accent focus:bg-accent group ml-2 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
+            aria-label="open mobile menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              class="fill-jacarta-700 h-4 w-4 transition-colors group-hover:fill-white group-focus:fill-white dark:fill-white"
+            >
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path d="M18 18v2H6v-2h12zm3-7v2H3v-2h18zm-3-7v2H6V4h12z" />
+            </svg>
+          </button>
+        </div>
+        </div>
+    </header>
+
+    
+<main>
+    <!-- Hero -->
+    <section class="relative pb-10 pt-20 md:pt-32 lg:h-[88vh]">
+        <picture class="pointer-events-none absolute inset-x-0 top-0 -z-10 dark:hidden">
+            <img src="/static/img/gradient.jpg" alt="gradient" />
+        </picture>
+        <picture class="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden dark:block">
+            <img src="/static/img/gradient_dark.jpg" alt="gradient dark" />
+        </picture>
+
+        <div class="container h-full">
+            <div class="grid h-full items-center gap-4 md:grid-cols-12">
+                <div class="col-span-6 flex h-full flex-col items-center justify-center py-10 md:items-start md:py-20 xl:col-span-4">
+                    <h1 class="text-jacarta-700 font-display mb-6 text-center text-5xl dark:text-white md:text-left lg:text-6xl xl:text-7xl">
+                      MassGram
+                    </h1>
+                    <h3 class="dark:text-jacarta-100 mb-8 text-center text-lg md:text-left">
+                        The world's best shop to get the world's cheapest accounts
+                    </h3>
+
+                </div>
+
+                <!-- Hero image -->
+                <div class="col-span-6 xl:col-span-8">
+                    <div class="relative text-center md:pl-8 md:text-right">
+                        <svg viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="mt-8 inline-block w-72 rotate-[8deg] sm:w-full lg:w-[24rem] xl:w-[35rem]">
+              
+              <g clip-path="url(#clipping)">
+                <!-- Bg image -->
+                <image href="/static/img/LogoGris.png" class="dark:hidden"  width="200" height="200" clip-path="url(#clipping)" />
+                <image href="/static/img/LogoBlanco.png" class="hidden dark:block"  width="200" height="200" clip-path="url(#clipping)" />
+              </g>
+            </svg>
+                        <img src="/static/img/3D_elements.png" alt="" class="animate-fly absolute top-0 md:-right-[10%]" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end hero -->
+
+    <!-- Trending Categories -->
+    <section class="py-24" id="products">
+        <div class="container">
+            <h2 class="font-display text-jacarta-700 mb-8 text-center text-3xl dark:text-white">
+                <span class="mr-1 inline-block h-6 w-6 bg-contain bg-center text-xl" style="
+            background-image: url(https://cdn.jsdelivr.net/npm/emoji-datasource-apple@7.0.2/img/apple/64/26a1.png);
+          "></span> Our Products <span class="mr-1 inline-block h-6 w-6 bg-contain bg-center text-xl" style="
+            background-image: url(https://cdn.jsdelivr.net/npm/emoji-datasource-apple@7.0.2/img/apple/64/26a1.png);
+          "></span>
+            </h2>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-1 gap-[1.875rem] md:grid-cols-2 lg:grid-cols-4">
+                
+                    
+                    <article>
+                        
+                        <a href="/buy/154879/see" class="group flex items-center">
+                        <div class="dark:bg-jacarta-700 dark:border-jacarta-700 border-jacarta-100 block rounded-[1.25rem] border bg-white p-[1.1875rem] transition-shadow hover:shadow-lg">
+                            <figure class="relative">
+                                    <img src="/static/img/productos/1.png" alt="item 5" class="w-full rounded-[0.625rem]" loading="lazy" />
+                            </figure>
+                            <div class="mt-7 flex items-center justify-between">
+                                    <span class="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">Netflix</span>
+                </div>
+                <div class="mt-2 text-sm">
+                <span class="dark:text-jacarta-200 text-jacarta-700 mr-1">Price: 5.2€</span>
+                                    <br>
+                                    <span class="dark:text-jacarta-300 text-jacarta-500">Warranty: Lifetime</span>
+                            </div>
+
+
+
+                            <div class="mt-8 flex items-center justify-between text-accent font-display text-sm font-semibold" style="color: rgba(28,212,97,255);">
+                                In stock
+                             </div>
+                        </div>
+                    </a>
+                    </article>
+                    
+                
+                    
+                    <article>
+                        
+                        <a href="/buy/148253/see" class="group flex items-center">
+                        <div class="dark:bg-jacarta-700 dark:border-jacarta-700 border-jacarta-100 block rounded-[1.25rem] border bg-white p-[1.1875rem] transition-shadow hover:shadow-lg">
+                            <figure class="relative">
+                                    <img src="/static/img/productos/2.png" alt="item 5" class="w-full rounded-[0.625rem]" loading="lazy" />
+                            </figure>
+                            <div class="mt-7 flex items-center justify-between">
+                                    <span class="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">Spotify</span>
+                </div>
+                <div class="mt-2 text-sm">
+                <span class="dark:text-jacarta-200 text-jacarta-700 mr-1">Price: 5.2€</span>
+                                    <br>
+                                    <span class="dark:text-jacarta-300 text-jacarta-500">Warranty: Lifetime</span>
+                            </div>
+
+
+
+                            <div class="mt-8 flex items-center justify-between text-accent font-display text-sm font-semibold" style="color: rgba(28,212,97,255);">
+                                In stock
+                             </div>
+                        </div>
+                    </a>
+                    </article>
+                    
+                
+                    
+                    <article>
+                        
+                        <div class="dark:bg-jacarta-700 dark:border-jacarta-700 border-jacarta-100 block rounded-[1.25rem] border bg-white p-[1.1875rem] transition-shadow hover:shadow-lg">
+                            <figure class="relative">
+                                    <img src="/static/img/productos/3.png" alt="item 5" class="w-full rounded-[0.625rem]" loading="lazy" />
+                            </figure>
+                            <div class="mt-7 flex items-center justify-between">
+                                    <span class="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">DAZN</span>
+                </div>
+                <div class="mt-2 text-sm">
+                <span class="dark:text-jacarta-200 text-jacarta-700 mr-1">Price: 5.2€</span>
+                                    <br>
+                                    <span class="dark:text-jacarta-300 text-jacarta-500">Warranty: Lifetime</span>
+                            </div>
+
+
+
+                            <div class="mt-8 flex items-center justify-between text-accent font-display text-sm font-semibold" style="color: rgba(229,9,20,255);">
+                                Out Stock
+                             </div>
+                        </div>
+                    </a>
+                    </article>
+                    
+                
+                    
+                    <article>
+                        
+                        <a href="/buy/545876/see" class="group flex items-center">
+                        <div class="dark:bg-jacarta-700 dark:border-jacarta-700 border-jacarta-100 block rounded-[1.25rem] border bg-white p-[1.1875rem] transition-shadow hover:shadow-lg">
+                            <figure class="relative">
+                                    <img src="/static/img/productos/4.png" alt="item 5" class="w-full rounded-[0.625rem]" loading="lazy" />
+                            </figure>
+                            <div class="mt-7 flex items-center justify-between">
+                                    <span class="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">HBO Max</span>
+                </div>
+                <div class="mt-2 text-sm">
+                <span class="dark:text-jacarta-200 text-jacarta-700 mr-1">Price: 5.2€</span>
+                                    <br>
+                                    <span class="dark:text-jacarta-300 text-jacarta-500">Warranty: Lifetime</span>
+                            </div>
+
+
+
+                            <div class="mt-8 flex items-center justify-between text-accent font-display text-sm font-semibold" style="color: rgba(28,212,97,255);">
+                                In stock
+                             </div>
+                        </div>
+                    </a>
+                    </article>
+                    
+                
+                    
+                    <article>
+                        
+                        <a href="/buy/654842/see" class="group flex items-center">
+                        <div class="dark:bg-jacarta-700 dark:border-jacarta-700 border-jacarta-100 block rounded-[1.25rem] border bg-white p-[1.1875rem] transition-shadow hover:shadow-lg">
+                            <figure class="relative">
+                                    <img src="/static/img/productos/5.png" alt="item 5" class="w-full rounded-[0.625rem]" loading="lazy" />
+                            </figure>
+                            <div class="mt-7 flex items-center justify-between">
+                                    <span class="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">Disney+</span>
+                </div>
+                <div class="mt-2 text-sm">
+                <span class="dark:text-jacarta-200 text-jacarta-700 mr-1">Price: 5.2€</span>
+                                    <br>
+                                    <span class="dark:text-jacarta-300 text-jacarta-500">Warranty: Lifetime</span>
+                            </div>
+
+
+
+                            <div class="mt-8 flex items-center justify-between text-accent font-display text-sm font-semibold" style="color: rgba(28,212,97,255);">
+                                In stock
+                             </div>
+                        </div>
+                    </a>
+                    </article>
+                    
+                
+                    
+                    <article>
+                        
+                        <a href="/buy/784211/see" class="group flex items-center">
+                        <div class="dark:bg-jacarta-700 dark:border-jacarta-700 border-jacarta-100 block rounded-[1.25rem] border bg-white p-[1.1875rem] transition-shadow hover:shadow-lg">
+                            <figure class="relative">
+                                    <img src="/static/img/productos/6.png" alt="item 5" class="w-full rounded-[0.625rem]" loading="lazy" />
+                            </figure>
+                            <div class="mt-7 flex items-center justify-between">
+                                    <span class="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">Discord Nitro Boost</span>
+                </div>
+                <div class="mt-2 text-sm">
+                <span class="dark:text-jacarta-200 text-jacarta-700 mr-1">Price: 12.2€</span>
+                                    <br>
+                                    <span class="dark:text-jacarta-300 text-jacarta-500">Warranty: Yearly</span>
+                            </div>
+
+
+
+                            <div class="mt-8 flex items-center justify-between text-accent font-display text-sm font-semibold" style="color: rgba(28,212,97,255);">
+                                In stock
+                             </div>
+                        </div>
+                    </a>
+                    </article>
+                    
+                
+                    
+                    <article>
+                        
+                        <a href="/buy/548113/see" class="group flex items-center">
+                        <div class="dark:bg-jacarta-700 dark:border-jacarta-700 border-jacarta-100 block rounded-[1.25rem] border bg-white p-[1.1875rem] transition-shadow hover:shadow-lg">
+                            <figure class="relative">
+                                    <img src="/static/img/productos/7.png" alt="item 5" class="w-full rounded-[0.625rem]" loading="lazy" />
+                            </figure>
+                            <div class="mt-7 flex items-center justify-between">
+                                    <span class="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">Discord Nitro Boost</span>
+                </div>
+                <div class="mt-2 text-sm">
+                <span class="dark:text-jacarta-200 text-jacarta-700 mr-1">Price: 5.2€</span>
+                                    <br>
+                                    <span class="dark:text-jacarta-300 text-jacarta-500">Warranty: Month</span>
+                            </div>
+
+
+
+                            <div class="mt-8 flex items-center justify-between text-accent font-display text-sm font-semibold" style="color: rgba(28,212,97,255);">
+                                In stock
+                             </div>
+                        </div>
+                    </a>
+                    </article>
+                    
+                
+                    
+                    <article>
+                        
+                        <a href="/buy/895421/see" class="group flex items-center">
+                        <div class="dark:bg-jacarta-700 dark:border-jacarta-700 border-jacarta-100 block rounded-[1.25rem] border bg-white p-[1.1875rem] transition-shadow hover:shadow-lg">
+                            <figure class="relative">
+                                    <img src="/static/img/productos/8.png" alt="item 5" class="w-full rounded-[0.625rem]" loading="lazy" />
+                            </figure>
+                            <div class="mt-7 flex items-center justify-between">
+                                    <span class="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">Discord Nitro Classic</span>
+                </div>
+                <div class="mt-2 text-sm">
+                <span class="dark:text-jacarta-200 text-jacarta-700 mr-1">Price: 9.2€</span>
+                                    <br>
+                                    <span class="dark:text-jacarta-300 text-jacarta-500">Warranty: Yearly</span>
+                            </div>
+
+
+
+                            <div class="mt-8 flex items-center justify-between text-accent font-display text-sm font-semibold" style="color: rgba(28,212,97,255);">
+                                In stock
+                             </div>
+                        </div>
+                    </a>
+                    </article>
+                    
+                
+                    
+                        <article>
+                            
+                            <a href="/buy/154788/see" class="group flex items-center"></a>
+                            <div class="dark:bg-jacarta-700 dark:border-jacarta-700 border-jacarta-100 block rounded-[1.25rem] border bg-white p-[1.1875rem] transition-shadow hover:shadow-lg">
+                              <figure class="relative">
+                                        <img src="/static/img/productos/9.png" alt="item 5" class="w-full rounded-[0.625rem]" loading="lazy" />
+                                </figure>
+                                <div class="mt-7 flex items-center justify-between">
+                                        <span class="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">Discord Nitro Classic</span>
+                </div>
+                <div class="mt-2 text-sm">
+                <span class="dark:text-jacarta-200 text-jacarta-700 mr-1">Price: 3.2€</span>
+                                    <br>
+                                    <span class="dark:text-jacarta-300 text-jacarta-500">Warranty: Month</span>
+                            </div>
+
+
+
+                            <div class="mt-8 flex items-center justify-between text-accent font-display text-sm font-semibold" style="color: rgba(229,9,20,255);">
+                                Out Stock
+                             </div>
+                        </div>
+                    </a>
+                    </article>
+                    
+                
+                    
+                    <article>
+                        
+                        <a href="/buy/654887/see" class="group flex items-center">
+                        <div class="dark:bg-jacarta-700 dark:border-jacarta-700 border-jacarta-100 block rounded-[1.25rem] border bg-white p-[1.1875rem] transition-shadow hover:shadow-lg">
+                            <figure class="relative">
+                                    <img src="/static/img/productos/10.png" alt="item 5" class="w-full rounded-[0.625rem]" loading="lazy" />
+                            </figure>
+                            <div class="mt-7 flex items-center justify-between">
+                                    <span class="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">Instagram UHQ followers (10K)</span>
+                </div>
+                <div class="mt-2 text-sm">
+                <span class="dark:text-jacarta-200 text-jacarta-700 mr-1">Price: 6.5€</span>
+                                    <br>
+                                    <span class="dark:text-jacarta-300 text-jacarta-500">Warranty: Lifetime</span>
+                            </div>
+
+
+
+                            <div class="mt-8 flex items-center justify-between text-accent font-display text-sm font-semibold" style="color: rgba(28,212,97,255);">
+                                In stock
+                             </div>
+                        </div>
+                    </a>
+                    </article>
+                    
+                
+                    
+                    <article>
+                        
+                        <a href="/buy/548799/see" class="group flex items-center">
+                        <div class="dark:bg-jacarta-700 dark:border-jacarta-700 border-jacarta-100 block rounded-[1.25rem] border bg-white p-[1.1875rem] transition-shadow hover:shadow-lg">
+                            <figure class="relative">
+                                    <img src="/static/img/productos/11.png" alt="item 5" class="w-full rounded-[0.625rem]" loading="lazy" />
+                            </figure>
+                            <div class="mt-7 flex items-center justify-between">
+                                    <span class="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">Instagram UHQ likes (5000)</span>
+                </div>
+                <div class="mt-2 text-sm">
+                <span class="dark:text-jacarta-200 text-jacarta-700 mr-1">Price: 2.5€</span>
+                                    <br>
+                                    <span class="dark:text-jacarta-300 text-jacarta-500">Warranty: Lifetime</span>
+                            </div>
+
+
+
+                            <div class="mt-8 flex items-center justify-between text-accent font-display text-sm font-semibold" style="color: rgba(28,212,97,255);">
+                                In stock
+                             </div>
+                        </div>
+                    </a>
+                    </article>
+                    
+                
+            </div>
+        </div>
+    </section>
+    <!-- end trending categories -->
+
+    <!-- Process / Newsletter -->
+    <section class="dark:bg-jacarta-800 relative py-24" id="hww">
+        <picture class="pointer-events-none absolute inset-0 -z-10 dark:hidden">
+            <img src="/static/img/gradient_light.jpg" alt="gradient" class="w-full h-full" />
+        </picture>
+        <div class="container">
+            <h2 class="font-display text-jacarta-700 mb-16 text-center text-3xl dark:text-white">
+                How we work
+            </h2>
+            <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+                <div class="text-center">
+                    <div class="mb-6 inline-flex rounded-full bg-[#FFD0D0] p-3">
+                        <div class="bg-red inline-flex h-12 w-12 items-center justify-center rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="h-5 w-5 fill-white">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path
+                  d="M22 6h-7a6 6 0 1 0 0 12h7v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2zm-7 2h8v8h-8a4 4 0 1 1 0-8zm0 3v2h3v-2h-3z"
+                />
+              </svg>
+                        </div>
+                    </div>
+                    <h3 class="font-display text-jacarta-700 mb-4 text-lg dark:text-white">Payment methods</h3>
+                    <p class="dark:text-jacarta-300">
+                        You can pay with cryptos in the web, for paying with paypal please open a discord ticket.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="mb-6 inline-flex rounded-full bg-[#C4F2E3] p-3">
+                        <div class="bg-green inline-flex h-12 w-12 items-center justify-center rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="h-5 w-5 fill-white">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
+              </svg>
+                        </div>
+                    </div>
+                    <h3 class="font-display text-jacarta-700 mb-4 text-lg dark:text-white">Stock</h3>
+                    <p class="dark:text-jacarta-300">
+                        You can ask about the stock of any product by opening a ticket on our discord server.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="mb-6 inline-flex rounded-full bg-[#CDDFFB] p-3">
+                        <div class="bg-blue inline-flex h-12 w-12 items-center justify-center rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="h-5 w-5 fill-white">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path
+                  d="M17.409 19c-.776-2.399-2.277-3.885-4.266-5.602A10.954 10.954 0 0 1 20 11V3h1.008c.548 0 .992.445.992.993v16.014a1 1 0 0 1-.992.993H2.992A.993.993 0 0 1 2 20.007V3.993A1 1 0 0 1 2.992 3H6V1h2v4H4v7c5.22 0 9.662 2.462 11.313 7h2.096zM18 1v4h-8V3h6V1h2zm-1.5 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+                />
+              </svg>
+                        </div>
+                    </div>
+                    <h3 class="font-display text-jacarta-700 mb-4 text-lg dark:text-white">Guarantees</h3>
+                    <p class="dark:text-jacarta-300">
+                        We offer guarantees, it doesn't mean your account won't get banned or closed, but if that happens just open a ticket and we will give u another account.
+                    </p>
+                </div>
+                
+                <a href="https://discord.gg/qv2CmtFM3M" target="_blank">
+                    <div class="text-center">
+                        <div class="mb-6 inline-flex rounded-full bg-[#CDBCFF] p-3">
+                            <div class="bg-accent inline-flex h-12 w-12 items-center justify-center rounded-full">
+                                <img src="/static/img/discordlogo.png"/>
+                            </div>
+                        </div>
+                        <h3 class="font-display text-jacarta-700 mb-4 text-lg dark:text-white">Our Discord Server</h3>
+                        <p class="dark:text-jacarta-300">
+                            We have a discord community, you can take a look, just click here.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="relative py-16 md:py-24" id="reviews">
+        <div class="container">
+            <br>
+            <h2 class="font-display text-jacarta-700 mb-8 text-center text-3xl dark:text-white">
+                <span class="mr-1 inline-block h-6 w-6 bg-contain bg-center text-xl" style="
+            background-image: url(https://cdn.jsdelivr.net/npm/emoji-datasource-apple@7.0.2/img/apple/64/1f91c.png);
+          "></span> Reviews <span class="mr-1 inline-block h-6 w-6 bg-contain bg-center text-xl" style="
+            background-image: url(https://cdn.jsdelivr.net/npm/emoji-datasource-apple@7.0.2/img/apple/64/1f91b.png);
+          "></span>
+            </h2>
+          <div class="grid grid-cols-1 gap-[1.875rem] sm:grid-cols-2 md:grid-cols-3">
+            <!-- Posts -->
+            
+            
+            <article>
+              <div class="overflow-hidden rounded-[1.25rem] transition-shadow hover:shadow-lg">
+    
+                <!-- Body -->
+                <div
+                  class="dark:border-jacarta-600 dark:bg-jacarta-700 border-jacarta-100 rounded-b-[1.25rem] border border-t-0 bg-white p-[10%]"
+                >
+    
+                  <h2
+                    class="font-display text-jacarta-700 hover:text-accent mb-4 text-xl dark:text-white"
+                  >! Boy2Flow™
+                  </h2>
+                  <p class="dark:text-jacarta-200 mb-8">
+                    Muy buena atencion
+                  </p>
+    
+                  <!-- Date / Time -->
+                  <div class="text-jacarta-400 flex flex-wrap items-center space-x-2 text-sm">
+                    <span><time datetime="2022-02-05">
+                        
+                        ⭐
+                        
+                        ⭐
+                        
+                        ⭐
+                        
+                        ⭐
+                        
+                        ⭐
+                        
+                    </time></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+            
+            <article>
+              <div class="overflow-hidden rounded-[1.25rem] transition-shadow hover:shadow-lg">
+    
+                <!-- Body -->
+                <div
+                  class="dark:border-jacarta-600 dark:bg-jacarta-700 border-jacarta-100 rounded-b-[1.25rem] border border-t-0 bg-white p-[10%]"
+                >
+    
+                  <h2
+                    class="font-display text-jacarta-700 hover:text-accent mb-4 text-xl dark:text-white"
+                  >Natii 🌸
+                  </h2>
+                  <p class="dark:text-jacarta-200 mb-8">
+                    Rapido y funcional
+                  </p>
+    
+                  <!-- Date / Time -->
+                  <div class="text-jacarta-400 flex flex-wrap items-center space-x-2 text-sm">
+                    <span><time datetime="2022-02-05">
+                        
+                        ⭐
+                        
+                        ⭐
+                        
+                        ⭐
+                        
+                        ⭐
+                        
+                        ⭐
+                        
+                    </time></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+            
+            <article>
+              <div class="overflow-hidden rounded-[1.25rem] transition-shadow hover:shadow-lg">
+    
+                <!-- Body -->
+                <div
+                  class="dark:border-jacarta-600 dark:bg-jacarta-700 border-jacarta-100 rounded-b-[1.25rem] border border-t-0 bg-white p-[10%]"
+                >
+    
+                  <h2
+                    class="font-display text-jacarta-700 hover:text-accent mb-4 text-xl dark:text-white"
+                  >NPQ
+                  </h2>
+                  <p class="dark:text-jacarta-200 mb-8">
+                    Veloz como el rayo !! Funcionando a la primera
+                  </p>
+    
+                  <!-- Date / Time -->
+                  <div class="text-jacarta-400 flex flex-wrap items-center space-x-2 text-sm">
+                    <span><time datetime="2022-02-05">
+                        
+                        ⭐
+                        
+                        ⭐
+                        
+                        ⭐
+                        
+                        ⭐
+                        
+                        ⭐
+                        
+                    </time></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+            
+            <article>
+              <div class="overflow-hidden rounded-[1.25rem] transition-shadow hover:shadow-lg">
+    
+                <!-- Body -->
+                <div
+                  class="dark:border-jacarta-600 dark:bg-jacarta-700 border-jacarta-100 rounded-b-[1.25rem] border border-t-0 bg-white p-[10%]"
+                >
+    
+                  <h2
+                    class="font-display text-jacarta-700 hover:text-accent mb-4 text-xl dark:text-white"
+                  >Cumball
+                  </h2>
+                  <p class="dark:text-jacarta-200 mb-8">
+                    Rápido y todo funciona correctamente!
+                  </p>
+    
+                  <!-- Date / Time -->
+                  <div class="text-jacarta-400 flex flex-wrap items-center space-x-2 text-sm">
+                    <span><time datetime="2022-02-05">
+                        
+                        ⭐
+                        
+                        ⭐
+                        
+                        ⭐
+                        
+                        ⭐
+                        
+                        ⭐
+                        
+                    </time></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+            
+            <article>
+              <div class="overflow-hidden rounded-[1.25rem] transition-shadow hover:shadow-lg">
+    
+                <!-- Body -->
+                <div
+                  class="dark:border-jacarta-600 dark:bg-jacarta-700 border-jacarta-100 rounded-b-[1.25rem] border border-t-0 bg-white p-[10%]"
+                >
+    
+                  <h2
+                    class="font-display text-jacarta-700 hover:text-accent mb-4 text-xl dark:text-white"
+                  >R3venger
+                  </h2>
+                  <p class="dark:text-jacarta-200 mb-8">
+                    5 out of 5, crazy. Super fast, and incredible staff.
+                  </p>
+    
+                  <!-- Date / Time -->
+                  <div class="text-jacarta-400 flex flex-wrap items-center space-x-2 text-sm">
+                    <span><time datetime="2022-02-05">
+                        
+                        ⭐
+                        
+                        ⭐
+                        
+                        ⭐
+                        
+                        ⭐
+                        
+                        ⭐
+                        
+                    </time></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+            
+          
+          </div>
+        </div>
+      </section>
+
+    
+</main>
+
+
+
+    <!-- Footer -->
+    <footer class="dark:bg-jacarta-900 page-footer bg-white">
+        <div class="container">
+            <div class="grid grid-cols-6 gap-x-7 gap-y-14 pt-24 pb-12 md:grid-cols-12">
+                <div class="col-span-3 md:col-span-4">
+                    <!-- Logo -->
+                    <a href="/" class="mb-6 inline-block">
+                        <img src="/static/img/logo.png" class="max-h-7 dark:hidden" alt="MassGram" />
+                        <img src="/static/img/logo_white.png" class="hidden max-h-7 dark:block" alt="MassGram" />
+                    </a>
+                    <p class="dark:text-jacarta-300 mb-12">
+                      Created with the purpose of making things easier.
+                    </p>
+                </div>
+
+                <div class="col-span-full sm:col-span-3 md:col-span-2 md:col-start-7">
+                    <h3 class="font-display text-jacarta-700 mb-6 text-sm dark:text-white">Links</h3>
+                    <ul class="dark:text-jacarta-300 flex flex-col space-y-1">
+                      
+                        <li>
+                            <a href="/" class="hover:text-accent dark:hover:text-white">Home Page</a>
+                        </li>  
+                        <li>
+                            <a href="/#products" class="hover:text-accent dark:hover:text-white">Products</a>
+                        </li> 
+                        <li>
+                            <a href="/#hww" class="hover:text-accent dark:hover:text-white">How we Work</a>
+                        </li> 
+                        <li>
+                            <a href="/#reviews" class="hover:text-accent dark:hover:text-white">Reviews</a>
+                        </li>
+                        <li>
+                            <a href="/createreview" class="hover:text-accent dark:hover:text-white">Create a Review</a>
+                        </li>
+                        <li>
+                            <a href="https://discord.gg/qv2CmtFM3M" target="_blank" class="hover:text-accent dark:hover:text-white">Discord</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col items-center justify-between space-y-2 py-8 sm:flex-row sm:space-y-0">
+                <span class="dark:text-jacarta-400 text-sm">&copy;
+            <script>
+              document.write(new Date().getFullYear())
+            </script>
+            MassGram — Made by ПΛƬΣ
+            </span>
+          <ul class="dark:text-jacarta-400 flex flex-wrap space-x-4 text-sm">
+            <li>
+              <a href="/tos" class="hover:text-accent">Terms Of Service</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="/static/js/app.bundle.js"></script>
+  </body>
+</html>
